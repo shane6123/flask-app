@@ -4,16 +4,24 @@
 from flask import Flask, request, jsonify
 # from flask_cors import CORS 
 
-app = Flask(__name__)
 # CORS(app)
 
-
-# Defining the home page of our site
-@app.route('/')
-def home():
-    return jsonify({'message': 'Welcome to the Remove BG API!'})
+# app = Flask(__name__)
 
 
+
+
+def create_app():
+    app = Flask(__name__)
+
+    @app.route('/')
+    def index():
+        return 'Hello World'
+
+
+
+
+    return app
 
 # app.run(port=5000)
 # if __name__ == '__main__':
