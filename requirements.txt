@@ -1,4 +1,6 @@
 Flask
 Gunicorn
-Image
 rembg
+PIL
+
+
