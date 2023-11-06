@@ -1,6 +1,6 @@
 # Importing Required Modules 
-from rembg import remove 
-from PIL import Image 
+# from rembg import remove 
+# from PIL import Image 
 from flask import Flask, request, jsonify
 # from flask_cors import CORS 
 
@@ -17,7 +17,7 @@ def home():
 
 # app.run(port=5000)
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0')
+    app.run(debug=True)
 
 # @app.route('/removebg', methods=['POST'])
 # def removebg():
