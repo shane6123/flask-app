@@ -17,7 +17,7 @@ def home():
 
 # app.run(port=5000)
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
 
 # @app.route('/removebg', methods=['POST'])
 # def removebg():
