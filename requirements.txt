@@ -1,6 +1,4 @@
 Flask
 Gunicorn
 rembg
-PIL
-
 
