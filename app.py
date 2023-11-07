@@ -1,9 +1,12 @@
 from flask import Flask, request, send_file, jsonify
+# from fastapi import FastAPI, File, UploadFile
 import rembg
 import io
 from PIL import Image
 
 app = Flask(__name__)
+# app = FastAPI()
+
 
 @app.route('/upload', methods=['POST'])
 def upload():
@@ -36,6 +39,37 @@ def upload():
     
     except Exception as e:
         return jsonify({'error': f'An error occurred: {str(e)}'}), 500
+    
+
+@app.route('/removebg', methods=['POST'])
+
+def removebg():
+    if request.method == 'POST':
+        # Store path of the image in the variable input_path 
+        input_path = './1.jpeg'
+
+        # Store path of the output image in the variable output_path 
+        output_path = './output1.png'
+        # Processing the image 
+        input = Image.open(input_path) 
+
+        # Removing the background from the given Image 
+        output = rembg.remove(input) 
+
+        #Saving the image in the given path 
+        output.save(output_path) 
+
+        return jsonify({'message': 'Image background removed successfully!'})
+    else:
+        return jsonify({'message': 'Invalid request method!'})
+    
+
+
 
 # if __name__ == '__main__':
-#     app.run(debug=True)
+
+#     app.run(port=5000)
+    # app.run(debug=True)
+
+
+
